@@ -19,7 +19,7 @@ geo.means <- read.csv(geo.means.f,header=T,row.names=1,check.names=F,nrow=nrows)
 geo.means <- geo.means[,!(colnames(geo.means) %in% geo.bad_cols)]
 
 print(paste0('Reading in TCGA'))
-tcga.bad_cols <- c('Kidney_2','Liver','Lung_2','Pancreas','Brain')
+tcga.bad_cols <- c('Thymus','Kidney_2','Liver','Lung_2','Pancreas','Brain')
 tcga.means.f <- file.path(data.dir,'TCGA/summary/by_statistics/Solid_Tissue_Normal/means_Solid_Tissue_Normal.csv')
 tcga.means <- read.csv(tcga.means.f,header=T,row.names=1,check.names=F,nrow=nrows)
 colnames(tcga.means) <- c('Bladder','Breast','Cervix','Colon','Esophagus','Brain','Head_and_kneck','Kidney','Kidney_2','Liver',
