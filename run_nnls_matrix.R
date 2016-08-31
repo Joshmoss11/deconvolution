@@ -7,6 +7,9 @@ dir.create(nnls.dir)
 X <- as.matrix(read.csv(file.path(matrices.dir,'ref_no_cancer.csv'),row.names=1,nrow=nrows,check.names=F))
 Y <- as.matrix(read.csv(file.path(matrices.dir,'test_samples.csv'),row.names=1,nrow=nrows,check.names=F))
 
+rm.cols <- c('Vasc_endothelium')
+X <- X[,!(colnames(X) %in% rm.cols)]
+
 nans <- apply(X,1,function(x) {any(is.na(x))}) | apply(Y,1,function(x) {any(is.na(x))})
 X <- X[!nans,]
 Y <- Y[!nans,]
