@@ -1,7 +1,7 @@
 source('nnls_plots_functions.R')
 deconv.dir <- '/mnt/lustre/hms-01/fs01/joshua.moss/dor/deconvolution'
-nnls.dir <- file.path(deconv.dir,'nnls')
-plots.dir <- file.path(deconv.dir,'plots')
+nnls.dir <- file.path(deconv.dir,'nnls_select')
+plots.dir <- file.path(deconv.dir,'plots_select')
 dir.create(plots.dir,showWarnings=F)
 matrix.f <- file.path(nnls.dir,'nnls_betas_norm.csv')
 pies.f <- file.path(plots.dir,'betas_pies.pdf')
